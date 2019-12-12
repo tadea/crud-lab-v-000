@@ -2,21 +2,25 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 class RestaurantInput extends Component {
-  state = {
-    text: ''
-  }
-  
+ constructor(props) {
+    super(props);
+
+    this.state = {
+      text: ''
+    };
+  };
+
   handleOnChange(event) {
     this.setState({
-      text: event.target.value
+      text: event.target.value,
     });
   }
 
   handleOnSubmit(event) {
     event.preventDefault();
-    this.props.addRestaurant(this.state.text);
+    this.props.addRestaurant(this.state.text)
     this.setState({
-      text: '',
+      text: ''
     });
   }
   
